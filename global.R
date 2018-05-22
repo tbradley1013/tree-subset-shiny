@@ -12,6 +12,7 @@ suppressWarnings({
     library(ggtree)
     library(tidytree)
     library(treeio)
+    library(shinyalert)
   })
 })
 
