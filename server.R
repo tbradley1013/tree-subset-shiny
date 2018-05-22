@@ -70,7 +70,7 @@ shinyServer(
       
       if (is.null(tree())) {
         shinyalert("Tree import error", paste("There was an error when trying to read your tree!",
-                                              "Did you select the correct tree format?"),
+                                              "Did you select the correct file format?"),
                    type = "error")
       }
     })
