@@ -8,19 +8,6 @@ shinyServer(
   function(input, output, session){
     session$onSessionEnded(stopApp)
     
-    # output$file_info <- renderText({
-    #   output <- paste0("File Name: ", input$upload_tree$name, 
-    #                    "<br>File Size: ", input$upload_tree$size,
-    #                    "<br>File Type: ", input$upload_tree$type,
-    #                    "<br>File Path: ", input$upload_tree$datapath)
-    # })
-    # 
-    # output$tree_tbl <- renderTable({
-    #   req(input$upload_tree)
-    #   
-    #   read.tree(input$upload_tree$datapath) %>% 
-    #     as_data_frame()
-    # })
     
     tree <- reactive({
       req(input$upload_tree)
