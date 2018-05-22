@@ -9,7 +9,7 @@ shinyUI(
     useShinyalert(),
     useShinyjs(),
     navbarPage(
-      title = "Binning Functionality",
+      title = "Phylogenetic Tree Subsetting",
       tabPanel(
         title = "Explore Tree",
         fluidRow(
