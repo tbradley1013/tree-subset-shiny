@@ -26,15 +26,60 @@ shinyServer(
     output$select_node_render <- renderUI({
       req(input$upload_tree)
       output <- tagList(
-        selectizeInput(
-          inputId = "select_node",
-          label = "Select Node:",
-          choices = tree_df() %>% 
-            select(label) %>% 
-            arrange(label) %>% 
-            pull(label),
-          width = "100%"
+        fluidRow(
+          column(
+            12,
+            selectizeInput(
+              inputId = "select_node",
+              label = "Select Node:",
+              choices = tree_df() %>% 
+                select(label) %>% 
+                arrange(label) %>% 
+                pull(label),
+              width = "100%"
+            )
+          )
+        ),
+        fluidRow(
+          column(
+            3, 
+            numericInput(
+              inputId = "subtree_levels_back",
+              label = "Select Number of Levels:",
+              min = 1,
+              value = 5
+            )
+          ), 
+          column(
+            3,
+            numericInput(
+              inputId = "subtree_text_size",
+              label = "Select label text size:",
+              min = 2,
+              value = 3
+            )
+          ),
+          column(
+            3,
+            numericInput(
+              inputId = "subtree_plot_height",
+              label = "Select plot height",
+              value = 1200
+            )
+          ),
+          column(
+            3, 
+            numericInput(
+              inputId = "subtree_width_multiply",
+              label = "Select plot width multiplier:",
+              value = 1.4,
+              min = 1,
+              step = 0.1
+            )
+          )
         )
+        
+        
       )
       
 
@@ -62,7 +107,7 @@ shinyServer(
         theme_tree2() +
         scale_color_manual(values = c(`1` = "red", `0` = "black"))
       
-      p + lims(x = c(0, max(p$data$x) * 1.4))
+      p + lims(x = c(0, max(p$data$x) * subtree_width_multiply))
     })
 
     output$subtree_render <- renderUI({

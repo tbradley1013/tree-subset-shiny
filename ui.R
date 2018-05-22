@@ -19,41 +19,7 @@ shinyUI(
           )
         )
       ),
-      fluidRow(
-        column(
-          12,
-          uiOutput("select_node_render")
-        )
-      ),
-      fluidRow(
-        column(
-          4, 
-          numericInput(
-            inputId = "subtree_levels_back",
-            label = "Select Number of Levels:",
-            min = 1,
-            value = 5
-          )
-        ), 
-        column(
-          4,
-          numericInput(
-            inputId = "subtree_text_size",
-            label = "Select label text size:",
-            min = 2,
-            value = 3
-          )
-        ),
-        column(
-          4,
-          numericInput(
-            inputId = "subtree_plot_height",
-            label = "Select plot height",
-            value = 1200
-          )
-        )
-        
-      ),
+      uiOutput("select_node_render"),
       fluidRow(
         uiOutput(
           "subtree_render"
