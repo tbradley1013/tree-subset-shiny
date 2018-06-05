@@ -10,10 +10,16 @@ To get this app up and running locally, follow these steps:
   2. Select Version Control in the pop up window and then select Git on the next screen. 
   3. Copy and paste the url from this repos home page into the top box and select where on your computer you would like the contents of this repo to be saved. The resulting folder will likely be named `tree-subset-shiny` by default, but if not, it is recommneded you name it that.
   4. Select Create Project. This will clone the entire repo into a folder of your choice (see #4).
-  5. Open either the `ui.R`, `server.R`, or `global.R` file. 
-  6. No matter which of these files you open, you should see a button in the top right portion of the Source pane that says "Run App". Click this button!
-  7. A pop-up window will appear. You can either view the app in this window or in the web browser by clicking the "Open in Browser" button in the top left of the pop-up window. Personally, I prefer to view it in the browser. 
-  8. Now, you should be off and running! Select a `.tree` file on your computer and subset away!
+  5. Run the following command in your console window to install all required packages:
+  
+     ```
+     install.packages(c("shiny", "shinyjs", "tidyverse", "ggtree", "tidytree", "treeio", "shinyalert"))
+     ```
+  
+  6. Open either the `ui.R`, `server.R`, or `global.R` file. 
+  7. No matter which of these files you open, you should see a button in the top right portion of the Source pane that says "Run App". Click this button!
+  8. A pop-up window will appear. You can either view the app in this window or in the web browser by clicking the "Open in Browser" button in the top left of the pop-up window. Personally, I prefer to view it in the browser. 
+  9. Now, you should be off and running! Select a `.tree` file on your computer and subset away!
   
   
   
