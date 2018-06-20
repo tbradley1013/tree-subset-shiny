@@ -12,6 +12,15 @@ if (!"treeio" %in% installed.packages()) {
   devtools::install_github("GuangchuangYu/treeio")
 }
 
+if (!"purrr" %in% installed.packages()) install.packages("purrr")
+
+
+purrr::walk(c("shiny", "shinyjs", "tidyverse", 
+              "ggtree", "tidytree", "shinyalert"), ~{
+  if (!.x %in% installed.packages()) install.packages(.x)
+})
+  
+
 suppressWarnings({
   suppressPackageStartupMessages({
     library(shiny)
