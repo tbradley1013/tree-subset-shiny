@@ -1,5 +1,5 @@
 # Tree Subset Shiny
-This repository contains the code for a shiny app that allows for the visualization of subset phylogentic trees. This feature is useful as some phylogentic trees can be very hard to inspect as a whole, especially when there are extremely large number of nodes. This app uses a function named `tree_subset` (currently in development to be added to the [`treeio`](https://github.com/GuangchuangYu/treeio) package). This app allows for tree objects to be uploaded to the app and then for different tips to be selected to view the phylogentic relatives of that tip. 
+This repository contains the code for a shiny app that allows for the visualization of subset phylogentic trees. This feature is useful as some phylogentic trees can be very hard to inspect as a whole, especially when there are extremely large number of nodes. This app uses a function named `tree_subset` (currently in development version of [`treeio`](https://github.com/GuangchuangYu/treeio) package (version >= 1.5.1.2)). This app allows for tree objects to be uploaded to the app and then for different tips to be selected to view the phylogentic relatives of that tip. 
 
 
 Currently, this application is not being hosted anywhere, so to use it you will need to clone this repo and run the application locally. This intro assumes that you have R, RStudio, and git installed on your computer. If you do not please see [here](http://stat545.com/block000_r-rstudio-install.html) for R and RStudio and [here](http://happygitwithr.com/) for git. 
@@ -13,7 +13,9 @@ To get this app up and running locally, follow these steps:
   5. Run the following command in your console window to install all required packages:
   
      ```
-     install.packages(c("shiny", "shinyjs", "tidyverse", "ggtree", "tidytree", "treeio", "shinyalert"))
+     install.packages(c("shiny", "shinyjs", "tidyverse", "ggtree", "tidytree", "devtools", "shinyalert"))
+     
+     devtools::install_github("GuangchuangYu/treeio")
      ```
   
   6. Open either the `ui.R`, `server.R`, or `global.R` file. 
