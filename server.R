@@ -143,7 +143,10 @@ shinyServer(
 
     # creating the subtree
     output$subtree <- renderPlot({
-      req(input$select_node, tree())
+      req(input$select_node, tree(), 
+          input$subtree_width_multiply, 
+          input$subtree_text_size,
+          input$subtree_plot_height)
 
       # getting the subtree phylo or treedata object
       sub_tree <- tree_subset(tree(), node = input$select_node,
@@ -182,6 +185,7 @@ shinyServer(
 
     # creating the ui element for the subtree 
     output$subtree_render <- renderUI({
+      req(input$subtree_plot_height, tree())
       plotOutput("subtree", height = input$subtree_plot_height)
     })
     
