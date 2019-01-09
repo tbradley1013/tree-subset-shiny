@@ -30,7 +30,7 @@ shinyUI(
                 "NHX" = "nhx", 
                 "rst (CODEML/BASEML)" = "rst", 
                 "phylip" = "phylip", 
-                "r8s" = "r8s",
+                # "r8s" = "r8s",
                 "RAxML" = "raxml"
               ),
               selected = "tree"
