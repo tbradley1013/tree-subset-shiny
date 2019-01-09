@@ -100,9 +100,9 @@ shinyServer(
             3, 
             numericInput(
               inputId = "subtree_levels_back",
-              label = "Select Number of Levels:",
+              label = "Select Number of Ancestral Levels:",
               min = 1,
-              value = 5
+              value = 10
             )
           ), 
           column(
